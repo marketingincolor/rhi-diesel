@@ -1,4 +1,16 @@
 # BEGIN WordPress
+
+# BEGIN Math Captcha
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{REQUEST_URI} .wp-comments-post.php*
+RewriteCond %{HTTP_REFERER} !.*localhost.* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^$
+RewriteRule (.*) ^http://%{REMOTE_ADDR}/$ [R=301,L]
+</IfModule>
+# END Math Captcha
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /rhi-diesel/
@@ -7,4 +19,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /rhi-diesel/index.php [L]
 </IfModule>
+
 # END WordPress
