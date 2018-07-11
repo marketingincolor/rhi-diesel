@@ -1,2 +1,5 @@
 # wordpress specific
 wp-config.php
+.htaccess
+/wp-admin
+/wp-includes
